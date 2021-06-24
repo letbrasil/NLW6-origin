@@ -14,7 +14,7 @@ for (const link of links) {
   })
 }
 
-/* Mudar o header da página quando der scroll (sombreamento) */
+// mudar o header da página quando der scroll (sombreamento)
 const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
@@ -26,4 +26,14 @@ window.addEventListener('scroll', function () {
     // menor que a altura do header
     header.classList.remove('scroll')
   }
+})
+
+// Carrossel de depoimentos - Swiper slider
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true,
+  keyboard: true
 })
