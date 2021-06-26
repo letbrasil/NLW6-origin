@@ -15,10 +15,10 @@ for (const link of links) {
 }
 
 // mudar o header da página quando der scroll (sombreamento)
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
+function changeHeader() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function () {
   if (window.scrollY >= navHeight) {
     // scroll é maior que a altura do header
     header.classList.add('scroll')
@@ -26,7 +26,7 @@ window.addEventListener('scroll', function () {
     // menor que a altura do header
     header.classList.remove('scroll')
   }
-})
+}
 
 // Carrossel de depoimentos - Swiper slider
 const swiper = new Swiper('.swiper-container', {
@@ -59,11 +59,17 @@ scrollReveal.reveal(
 )
 
 // botão voltar para o topo
-const backToTopBtn = document.querySelector('.back-to-top')
-window.addEventListener('scroll', function () {
+function backToTop() {
+  const backToTopBtn = document.querySelector('.back-to-top')
+
   if (window.scrollY >= 560) {
     backToTopBtn.classList.add('show')
   } else {
     backToTopBtn.classList.remove('show')
   }
+}
+
+window.addEventListener('scroll', function () {
+  changeHeader()
+  backToTop()
 })
