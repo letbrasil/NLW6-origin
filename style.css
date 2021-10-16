@@ -50,13 +50,11 @@ body {
   font: 400 1rem var(--body-font);
   color: var(--text-color);
   background-color: var(--body-color);
-  -webkit-font-smoothing: antialiased;
 }
 
 .title {
   font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
-  -webkit-font-smoothing: auto;
 }
 
 .button {
@@ -177,7 +175,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
@@ -194,7 +193,8 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
@@ -565,6 +565,10 @@ footer .social a:hover {
 
   nav .menu ul li a.title {
     font: 400 1rem var(--body-font);
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
   }
 
   nav .icon-menu {
